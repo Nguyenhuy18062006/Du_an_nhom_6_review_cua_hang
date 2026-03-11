@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .form-card { background: white; border-radius: var(--radius); padding: 30px; box-shadow: var(--shadow); }
+    .form-card h2 { margin: 0 0 20px; color: var(--primary); font-size: 22px; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-weight: 700; font-size: 14px; margin-bottom: 6px; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; padding: 11px 14px; border: 1.5px solid #ddd; border-radius: 8px;
+      font-family: inherit; font-size: 14px; outline: none; transition: border 0.2s;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--primary); }
+    .form-group textarea { height: 160px; resize: vertical; }
+    .star-rating { display: flex; gap: 8px; }
+    .star-rating span { font-size: 30px; cursor: pointer; transition: transform 0.1s; }
+    .star-rating span:hover { transform: scale(1.2); }
+    .btn-submit { background: var(--primary); color: white; border: none; padding: 12px 32px; border-radius: 30px; font-weight: 700; font-size: 16px; cursor: pointer; transition: transform 0.2s; }
+    .btn-submit:hover { transform: scale(1.04); }
+  </style>
+  <title>Viết Review - Food Review</title>
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="index.html">
+      <img src="https://media.istockphoto.com/id/1290505863/vi/vec-to/c%C6%A1m-b%C3%A1t-c%C3%B4-l%E1%BA%ADp-tr%C3%AAn-n%E1%BB%81n-tr%E1%BA%AFng.jpg?s=612x612&w=0&k=20&c=3qtQo8IqxiMQhI6DiPul7o05c0ZNXdVW-Fc92qXLWvw=" />
+      Food Review
+    </a>
+    <div class="headerPhai">
+      <a class="s" href="index.html">Trang Chủ</a>
+      <a class="s" href="restaurant-list.html">Danh Sách Quán</a>
+      <a class="s" href="search.html">Tìm Quán</a>
+      <a class="s active" href="write-review.html">Viết Review</a>
+      <a class="s" href="review-list.html">Bài Review</a>
+      <a class="s" href="about.html">Giới Thiệu</a>
+    </div>
+  </header>
+
+  <div class="wrapper">
+    <div class="wrappercontent">
+      <div class="content">
+        <h2 class="section-title">✍️ Viết Review Quán Ăn</h2>
+        <div class="form-card">
+          <div class="form-group">
+            <label>Tên quán ăn</label>
+            <input type="text" placeholder="VD: Phở Bà Lan" />
+          </div>
+          <div class="form-group">
+            <label>Địa chỉ</label>
+            <input type="text" placeholder="VD: 12 Hàng Ngang, Hoàn Kiếm, Hà Nội" />
+          </div>
+          <div class="form-group">
+            <label>Loại món</label>
+            <select>
+              <option>-- Chọn loại món --</option>
+              <option>Phở / Bún / Miến</option>
+              <option>Cơm</option>
+              <option>Bánh Mì / Bánh</option>
+              <option>Lẩu / Nướng</option>
+              <option>Ăn Vặt</option>
+              <option>Đặc Sản Vùng Miền</option>
+              <option>Đồ Uống / Cà Phê</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Đánh giá sao</label>
+            <div class="star-rating" id="stars">
+              <span onclick="setRating(1)">⭐</span>
+              <span onclick="setRating(2)">⭐</span>
+              <span onclick="setRating(3)">⭐</span>
+              <span onclick="setRating(4)">⭐</span>
+              <span onclick="setRating(5)">⭐</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Nội dung review</label>
+            <textarea placeholder="Chia sẻ trải nghiệm của bạn về quán ăn này..."></textarea>
+          </div>
+          <div class="form-group">
+            <label>Tên của bạn</label>
+            <input type="text" placeholder="Nhập tên..." />
+          </div>
+          <button class="btn-submit" onclick="alert('Gửi review thành công! Cảm ơn bạn!')">📤 Gửi Review</button>
+        </div>
+      </div>
+
+      <div class="sideBar">
+        <div class="menu">
+          <ul>
+            <li class="title">Danh mục</li>
+            <li><a href="index.html">🏠 Trang chủ</a></li>
+            <li><a href="restaurant-list.html">🍜 Danh sách quán</a></li>
+            <li><a href="search.html">🔎 Tìm quán</a></li>
+            <li><a href="write-review.html">✍️ Viết review</a></li>
+            <li><a href="review-list.html">⭐ Danh sách review</a></li>
+            <li><a href="comment.html">💬 Bình luận</a></li>
+            <li><a href="about.html">ℹ️ Giới thiệu</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-col">
+        <h3>Liên hệ</h3>
+        <a href="mailto:huyn65830@gmail.com">📧 huyn65830@gmail.com</a>
+        <a href="tel:0344464495">📞 0344464495</a>
+      </div>
+      <div class="lenDau"><a href="#top">⬆ Lên đầu trang</a></div>
+    </div>
+  </div>
+  <script>
+    function setRating(n) {
+      const stars = document.querySelectorAll('#stars span');
+      stars.forEach((s, i) => s.style.filter = i < n ? 'brightness(1)' : 'grayscale(1)');
+    }
+  </script>
+</body>
+</html>

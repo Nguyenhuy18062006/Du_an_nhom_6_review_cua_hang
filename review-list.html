@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .review-card { background: white; border-radius: var(--radius); padding: 0; margin-bottom: 20px; box-shadow: var(--shadow); overflow: hidden; display: flex; text-decoration: none; color: var(--text); transition: transform 0.2s; }
+    .review-card:hover { transform: translateY(-4px); }
+    .review-card img { width: 180px; height: 150px; object-fit: cover; flex-shrink: 0; }
+    .review-card-body { padding: 18px; flex: 1; }
+    .review-card-body h3 { margin: 0 0 6px; color: var(--primary); font-size: 17px; }
+    .review-card-body .meta { font-size: 13px; color: var(--text-light); margin-bottom: 8px; }
+    .review-card-body p { font-size: 14px; line-height: 1.6; margin: 0; }
+  </style>
+  <title>Danh Sách Review - Food Review</title>
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="index.html">
+      <img src="https://media.istockphoto.com/id/1290505863/vi/vec-to/c%C6%A1m-b%C3%A1t-c%C3%B4-l%E1%BA%ADp-tr%C3%AAn-n%E1%BB%81n-tr%E1%BA%AFng.jpg?s=612x612&w=0&k=20&c=3qtQo8IqxiMQhI6DiPul7o05c0ZNXdVW-Fc92qXLWvw=" />
+      Food Review
+    </a>
+    <div class="headerPhai">
+      <a class="s" href="index.html">Trang Chủ</a>
+      <a class="s" href="restaurant-list.html">Danh Sách Quán</a>
+      <a class="s" href="search.html">Tìm Quán</a>
+      <a class="s" href="write-review.html">Viết Review</a>
+      <a class="s active" href="review-list.html">Bài Review</a>
+      <a class="s" href="about.html">Giới Thiệu</a>
+    </div>
+  </header>
+
+  <div class="wrapper">
+    <div class="wrappercontent">
+      <div class="content">
+        <h2 class="section-title">⭐ Danh Sách Bài Review</h2>
+
+        <a class="review-card" href="review-detail.html">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=300&h=200&fit=crop" alt="Phở" />
+          <div class="review-card-body">
+            <h3>Phở Bà Lan - Hương vị truyền thống giữa lòng Hà Nội</h3>
+            <div class="meta">✍️ Nguyễn Văn A &nbsp;|&nbsp; 📅 10/03/2026 &nbsp;|&nbsp; ⭐⭐⭐⭐⭐</div>
+            <p>Tôi đã đến thăm quán phở này trong một buổi sáng mùa đông, không khí se lạnh càng làm tô phở thêm phần hấp dẫn...</p>
+          </div>
+        </a>
+
+        <a class="review-card" href="review-detail.html">
+          <img src="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=300&h=200&fit=crop" alt="Bún Bò" />
+          <div class="review-card-body">
+            <h3>Bún Bò Huế Cô Hà - Cay mà nghiện!</h3>
+            <div class="meta">✍️ Trần Thị B &nbsp;|&nbsp; 📅 08/03/2026 &nbsp;|&nbsp; ⭐⭐⭐⭐</div>
+            <p>Bún bò nấu theo kiểu Huế chính gốc, nước dùng đỏ au, mùi sả hành thơm nức. Mức độ cay vừa phải...</p>
+          </div>
+        </a>
+
+        <a class="review-card" href="review-detail.html">
+          <img src="https://images.unsplash.com/photo-1542814760-5e04a0e35b62?w=300&h=200&fit=crop" alt="Bánh Mì" />
+          <div class="review-card-body">
+            <h3>Bánh Mì 25 - Ổ bánh mì ngon nhất Hà Nội</h3>
+            <div class="meta">✍️ Lê Minh C &nbsp;|&nbsp; 📅 05/03/2026 &nbsp;|&nbsp; ⭐⭐⭐⭐⭐</div>
+            <p>Vỏ bánh giòn tan, nhân đầy ắp, đặc biệt pate và chả lụa tự làm. Hàng khách xếp dài vào mỗi buổi sáng...</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="sideBar">
+        <div class="menu">
+          <ul>
+            <li class="title">Danh mục</li>
+            <li><a href="index.html">🏠 Trang chủ</a></li>
+            <li><a href="restaurant-list.html">🍜 Danh sách quán</a></li>
+            <li><a href="search.html">🔎 Tìm quán</a></li>
+            <li><a href="write-review.html">✍️ Viết review</a></li>
+            <li><a href="review-list.html">⭐ Danh sách review</a></li>
+            <li><a href="comment.html">💬 Bình luận</a></li>
+            <li><a href="about.html">ℹ️ Giới thiệu</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-col">
+        <h3>Liên hệ</h3>
+        <a href="mailto:huyn65830@gmail.com">📧 huyn65830@gmail.com</a>
+        <a href="tel:0344464495">📞 0344464495</a>
+      </div>
+      <div class="lenDau"><a href="#top">⬆ Lên đầu trang</a></div>
+    </div>
+  </div>
+</body>
+</html>
