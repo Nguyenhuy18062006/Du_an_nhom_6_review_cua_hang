@@ -1,116 +1,205 @@
 <!doctype html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .comment-section { background: white; border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
-    .comment-item { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid #f0f0f0; }
-    .comment-item:last-of-type { border-bottom: none; }
-    .avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--primary); color: white; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 18px; flex-shrink: 0; }
-    .comment-body .name { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
-    .comment-body .date { font-size: 12px; color: #aaa; margin-bottom: 6px; }
-    .comment-body .text { font-size: 14px; color: #444; line-height: 1.6; }
-    .comment-form { margin-top: 24px; padding-top: 20px; border-top: 2px solid #f0f0f0; }
-    .comment-form h3 { margin: 0 0 14px; color: var(--primary); }
-    .form-group { margin-bottom: 14px; }
-    .form-group input, .form-group textarea {
-      width: 100%; padding: 10px 14px; border: 1.5px solid #ddd; border-radius: 8px;
-      font-family: inherit; font-size: 14px; outline: none; transition: border 0.2s;
-    }
-    .form-group input:focus, .form-group textarea:focus { border-color: var(--primary); }
-    .form-group textarea { height: 100px; resize: vertical; }
-    .btn-submit { background: var(--primary); color: white; border: none; padding: 11px 28px; border-radius: 30px; font-weight: 700; font-size: 15px; cursor: pointer; transition: transform 0.2s; }
-    .btn-submit:hover { transform: scale(1.04); }
-  </style>
-  <title>Bình Luận - Food Review</title>
-</head>
-<body>
-  <header class="header">
-    <a class="logo" href="index.html">
-      <img src="https://media.istockphoto.com/id/1290505863/vi/vec-to/c%C6%A1m-b%C3%A1t-c%C3%B4-l%E1%BA%ADp-tr%C3%AAn-n%E1%BB%81n-tr%E1%BA%AFng.jpg?s=612x612&w=0&k=20&c=3qtQo8IqxiMQhI6DiPul7o05c0ZNXdVW-Fc92qXLWvw=" />
-      Food Review
-    </a>
-    <div class="headerPhai">
-      <a class="s" href="index.html">Trang Chủ</a>
-      <a class="s" href="restaurant-list.html">Danh Sách Quán</a>
-      <a class="s" href="search.html">Tìm Quán</a>
-      <a class="s" href="write-review.html">Viết Review</a>
-      <a class="s" href="review-list.html">Bài Review</a>
-      <a class="s" href="about.html">Giới Thiệu</a>
-    </div>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .comment-section {
+        background: white;
+        border-radius: 12px;
+        padding: 24px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+      .comment-item {
+        display: flex;
+        gap: 14px;
+        padding: 14px 0;
+        border-bottom: 1px solid #f0f0f0;
+      }
+      .comment-item:last-of-type {
+        border-bottom: none;
+      }
+      .avatar {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: #c0392b;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 18px;
+        flex-shrink: 0;
+      }
+      .comment-body .name {
+        font-weight: 700;
+        font-size: 14px;
+        margin-bottom: 4px;
+      }
+      .comment-body .date {
+        font-size: 12px;
+        color: #aaa;
+        margin-bottom: 6px;
+      }
+      .comment-body .text {
+        font-size: 14px;
+        color: #444;
+        line-height: 1.6;
+      }
+      .comment-form {
+        margin-top: 24px;
+        padding-top: 20px;
+        border-top: 2px solid #f0f0f0;
+      }
+      .comment-form h3 {
+        margin: 0 0 14px;
+        color: #c0392b;
+      }
+      .form-group {
+        margin-bottom: 14px;
+      }
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 10px 14px;
+        border: 1.5px solid #ddd;
+        border-radius: 8px;
+        font-family: inherit;
+        font-size: 14px;
+        outline: none;
+        transition: border 0.2s;
+      }
+      .form-group input:focus,
+      .form-group textarea:focus {
+        border-color: #c0392b;
+      }
+      .form-group textarea {
+        height: 100px;
+        resize: vertical;
+      }
+      .btn-submit {
+        background: #c0392b;
+        color: white;
+        border: none;
+        padding: 11px 28px;
+        border-radius: 30px;
+        font-weight: 700;
+        font-size: 15px;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+      .btn-submit:hover {
+        transform: scale(1.04);
+      }
+    </style>
+    <title>Bình Luận - Food Review</title>
+  </head>
+  <body>
+    <header class="header">
+      <a class="logo" href="index.html">
+        <img
+          src="https://media.istockphoto.com/id/1290505863/vi/vec-to/c%C6%A1m-b%C3%A1t-c%C3%B4-l%E1%BA%ADp-tr%C3%AAn-n%E1%BB%81n-tr%E1%BA%AFng.jpg?s=612x612&w=0&k=20&c=3qtQo8IqxiMQhI6DiPul7o05c0ZNXdVW-Fc92qXLWvw="
+        />
+        Food Review
+      </a>
+      <div class="headerPhai">
+        <a class="s" href="index.html">Trang Chủ</a>
+        <a class="s" href="restaurant-list.html">Danh Sách Quán</a>
+        <a class="s" href="search.html">Tìm Quán</a>
+        <a class="s" href="write-review.html">Viết Review</a>
+        <a class="s" href="review-list.html">Bài Review</a>
+        <a class="s" href="about.html">Giới Thiệu</a>
+      </div>
+    </header>
 
-  <div class="wrapper">
-    <div class="wrappercontent">
-      <div class="content">
-        <p style="font-size:13px; color:#aaa;">
-          <a href="review-detail.html" style="color:var(--primary);">Review: Phở Bà Lan</a> › Bình luận
-        </p>
-        <h2 class="section-title">💬 Bình Luận</h2>
-        <div class="comment-section">
-          <div class="comment-item">
-            <div class="avatar">A</div>
-            <div class="comment-body">
-              <div class="name">Nguyễn Văn A</div>
-              <div class="date">10/03/2026 lúc 08:32</div>
-              <div class="text">Quán phở này mình ăn từ hồi nhỏ, đến giờ vẫn giữ nguyên hương vị. Rất đáng thử!</div>
+    <div class="wrapper">
+      <div class="wrappercontent">
+        <div class="content">
+          <p style="font-size: 13px; color: #aaa">
+            <a href="review-detail.html" style="color: #c0392b"
+              >Review: Phở Bà Lan</a
+            >
+            › Bình luận
+          </p>
+          <h2 class="section-title">💬 Bình Luận</h2>
+          <div class="comment-section">
+            <div class="comment-item">
+              <div class="avatar">A</div>
+              <div class="comment-body">
+                <div class="name">Nguyễn Văn A</div>
+                <div class="date">10/03/2026 lúc 08:32</div>
+                <div class="text">
+                  Quán phở này mình ăn từ hồi nhỏ, đến giờ vẫn giữ nguyên hương
+                  vị. Rất đáng thử!
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="comment-item">
-            <div class="avatar" style="background:#2980b9;">B</div>
-            <div class="comment-body">
-              <div class="name">Trần Thị B</div>
-              <div class="date">10/03/2026 lúc 09:15</div>
-              <div class="text">Đúng rồi! Mình cũng hay ăn ở đây. Thích nhất là phần gầu giòn, ăn kèm với tương hoisin thì tuyệt!</div>
+            <div class="comment-item">
+              <div class="avatar" style="background: #2980b9">B</div>
+              <div class="comment-body">
+                <div class="name">Trần Thị B</div>
+                <div class="date">10/03/2026 lúc 09:15</div>
+                <div class="text">
+                  Đúng rồi! Mình cũng hay ăn ở đây. Thích nhất là phần gầu giòn,
+                  ăn kèm với tương hoisin thì tuyệt!
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="comment-item">
-            <div class="avatar" style="background:#27ae60;">C</div>
-            <div class="comment-body">
-              <div class="name">Lê Minh C</div>
-              <div class="date">11/03/2026 lúc 07:50</div>
-              <div class="text">Mình mới đến lần đầu theo recommendation này, không hối hận chút nào. Cảm ơn tác giả bài review!</div>
+            <div class="comment-item">
+              <div class="avatar" style="background: #27ae60">C</div>
+              <div class="comment-body">
+                <div class="name">Lê Minh C</div>
+                <div class="date">11/03/2026 lúc 07:50</div>
+                <div class="text">
+                  Mình mới đến lần đầu theo recommendation này, không hối hận
+                  chút nào. Cảm ơn tác giả bài review!
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div class="comment-form">
-            <h3>Để lại bình luận của bạn</h3>
-            <div class="form-group">
-              <input type="text" placeholder="Tên của bạn" />
+            <div class="comment-form">
+              <h3>Để lại bình luận của bạn</h3>
+              <div class="form-group">
+                <input type="text" placeholder="Tên của bạn" />
+              </div>
+              <div class="form-group">
+                <textarea placeholder="Nhập bình luận..."></textarea>
+              </div>
+              <button
+                class="btn-submit"
+                onclick="alert('Đã gửi bình luận thành công!')"
+              >
+                Gửi Bình Luận
+              </button>
             </div>
-            <div class="form-group">
-              <textarea placeholder="Nhập bình luận..."></textarea>
-            </div>
-            <button class="btn-submit" onclick="alert('Đã gửi bình luận thành công!')">Gửi Bình Luận</button>
+          </div>
+        </div>
+
+        <div class="sideBar">
+          <div class="menu">
+            <ul>
+              <li class="title">Danh mục</li>
+              <li><a href="index.html">🏠 Trang chủ</a></li>
+              <li><a href="restaurant-list.html">🍜 Danh sách quán</a></li>
+              <li><a href="search.html">🔎 Tìm quán</a></li>
+              <li><a href="write-review.html">✍️ Viết review</a></li>
+              <li><a href="review-list.html">⭐ Danh sách review</a></li>
+              <li><a href="comment.html">💬 Bình luận</a></li>
+              <li><a href="about.html">ℹ️ Giới thiệu</a></li>
+            </ul>
           </div>
         </div>
       </div>
-
-      <div class="sideBar">
-        <div class="menu">
-          <ul>
-            <li class="title">Danh mục</li>
-            <li><a href="index.html">🏠 Trang chủ</a></li>
-            <li><a href="restaurant-list.html">🍜 Danh sách quán</a></li>
-            <li><a href="search.html">🔎 Tìm quán</a></li>
-            <li><a href="write-review.html">✍️ Viết review</a></li>
-            <li><a href="review-list.html">⭐ Danh sách review</a></li>
-            <li><a href="comment.html">💬 Bình luận</a></li>
-            <li><a href="about.html">ℹ️ Giới thiệu</a></li>
-          </ul>
+      <div class="footer">
+        <div class="footer-col">
+          <h3>Liên hệ</h3>
+          <a href="mailto:huyn65830@gmail.com">📧 huyn65830@gmail.com</a>
+          <a href="tel:0344464495">📞 0344464495</a>
         </div>
+        <div class="lenDau"><a href="#top">⬆ Lên đầu trang</a></div>
       </div>
     </div>
-    <div class="footer">
-      <div class="footer-col">
-        <h3>Liên hệ</h3>
-        <a href="mailto:huyn65830@gmail.com">📧 huyn65830@gmail.com</a>
-        <a href="tel:0344464495">📞 0344464495</a>
-      </div>
-      <div class="lenDau"><a href="#top">⬆ Lên đầu trang</a></div>
-    </div>
-  </div>
-</body>
+  </body>
 </html>

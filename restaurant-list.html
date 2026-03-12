@@ -1,120 +1,142 @@
 <!doctype html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .restaurant-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 20px;
-    }
-    .restaurant-grid .card { height: auto; }
-  </style>
-  <title>Danh Sách Quán - Food Review</title>
-</head>
-<body>
-  <header class="header">
-    <a class="logo" href="index.html">
-      <img src="https://media.istockphoto.com/id/1290505863/vi/vec-to/c%C6%A1m-b%C3%A1t-c%C3%B4-l%E1%BA%ADp-tr%C3%AAn-n%E1%BB%81n-tr%E1%BA%AFng.jpg?s=612x612&w=0&k=20&c=3qtQo8IqxiMQhI6DiPul7o05c0ZNXdVW-Fc92qXLWvw=" />
-      Food Review
-    </a>
-    <div class="headerPhai">
-      <a class="s" href="index.html">Trang Chủ</a>
-      <a class="s active" href="restaurant-list.html">Danh Sách Quán</a>
-      <a class="s" href="search.html">Tìm Quán</a>
-      <a class="s" href="write-review.html">Viết Review</a>
-      <a class="s" href="review-list.html">Bài Review</a>
-      <a class="s" href="about.html">Giới Thiệu</a>
-    </div>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .restaurant-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 20px;
+      }
+      .restaurant-grid .card {
+        height: auto;
+      }
+    </style>
+    <title>Danh Sách Quán - Food Review</title>
+  </head>
+  <body>
+    <header class="header">
+      <a class="logo" href="index.html">
+        <img
+          src="https://media.istockphoto.com/id/1290505863/vi/vec-to/c%C6%A1m-b%C3%A1t-c%C3%B4-l%E1%BA%ADp-tr%C3%AAn-n%E1%BB%81n-tr%E1%BA%AFng.jpg?s=612x612&w=0&k=20&c=3qtQo8IqxiMQhI6DiPul7o05c0ZNXdVW-Fc92qXLWvw="
+        />
+        Food Review
+      </a>
+      <div class="headerPhai">
+        <a class="s" href="index.html">Trang Chủ</a>
+        <a class="s active" href="restaurant-list.html">Danh Sách Quán</a>
+        <a class="s" href="search.html">Tìm Quán</a>
+        <a class="s" href="write-review.html">Viết Review</a>
+        <a class="s" href="review-list.html">Bài Review</a>
+        <a class="s" href="about.html">Giới Thiệu</a>
+      </div>
+    </header>
 
-  <div class="wrapper">
-    <div class="wrappercontent">
-      <div class="content">
-        <h2 class="section-title">🍜 Danh Sách Quán Ăn</h2>
-        <div class="restaurant-grid">
-          <a class="card" href="restaurant-detail.html">
-            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=200&fit=crop" alt="Phở Bà Lan" />
-            <div class="card-body">
-              <h3>Phở Bà Lan</h3>
-              <p>📍 Hoàn Kiếm, Hà Nội</p>
-              <p>🏷️ Phở, Miền Bắc</p>
-              <span class="card-badge">⭐ 4.8</span>
-            </div>
-          </a>
-          <a class="card" href="restaurant-detail.html">
-            <img src="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=400&h=200&fit=crop" alt="Bún Bò" />
-            <div class="card-body">
-              <h3>Bún Bò Huế Cô Hà</h3>
-              <p>📍 Đống Đa, Hà Nội</p>
-              <p>🏷️ Bún Bò, Miền Trung</p>
-              <span class="card-badge">⭐ 4.7</span>
-            </div>
-          </a>
-          <a class="card" href="restaurant-detail.html">
-            <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=400&h=200&fit=crop" alt="Cơm Tấm" />
-            <div class="card-body">
-              <h3>Cơm Tấm Sài Gòn</h3>
-              <p>📍 Cầu Giấy, Hà Nội</p>
-              <p>🏷️ Cơm, Miền Nam</p>
-              <span class="card-badge">⭐ 4.6</span>
-            </div>
-          </a>
-          <a class="card" href="restaurant-detail.html">
-            <img src="https://images.unsplash.com/photo-1542814760-5e04a0e35b62?w=400&h=200&fit=crop" alt="Bánh Mì" />
-            <div class="card-body">
-              <h3>Bánh Mì 25</h3>
-              <p>📍 Ba Đình, Hà Nội</p>
-              <p>🏷️ Bánh Mì, Ăn Vặt</p>
-              <span class="card-badge">⭐ 4.9</span>
-            </div>
-          </a>
-          <a class="card" href="restaurant-detail.html">
-            <img src="https://images.unsplash.com/photo-1511910849309-0dffb8785146?w=400&h=200&fit=crop" alt="Chả Cá" />
-            <div class="card-body">
-              <h3>Chả Cá Lã Vọng</h3>
-              <p>📍 Hàng Sơn, Hà Nội</p>
-              <p>🏷️ Chả Cá, Đặc Sản</p>
-              <span class="card-badge">⭐ 4.8</span>
-            </div>
-          </a>
-          <a class="card" href="restaurant-detail.html">
-            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=200&fit=crop" alt="Bún Chả" />
-            <div class="card-body">
-              <h3>Bún Chả Hương Liên</h3>
-              <p>📍 Đống Đa, Hà Nội</p>
-              <p>🏷️ Bún Chả, Đặc Sản</p>
-              <span class="card-badge">⭐ 4.9</span>
-            </div>
-          </a>
+    <div class="wrapper">
+      <div class="wrappercontent">
+        <div class="content">
+          <h2 class="section-title">🍜 Danh Sách Quán Ăn</h2>
+          <div class="restaurant-grid">
+            <a class="card" href="restaurant-detail.html">
+              <img
+                src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=200&fit=crop"
+                alt="Phở Bà Lan"
+              />
+              <div class="card-body">
+                <h3>Phở Bà Lan</h3>
+                <p>📍 Hoàn Kiếm, Hà Nội</p>
+                <p>🏷️ Phở, Miền Bắc</p>
+                <span class="card-badge">⭐ 4.8</span>
+              </div>
+            </a>
+            <a class="card" href="restaurant-detail.html">
+              <img
+                src="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=400&h=200&fit=crop"
+                alt="Bún Bò"
+              />
+              <div class="card-body">
+                <h3>Bún Bò Huế Cô Hà</h3>
+                <p>📍 Đống Đa, Hà Nội</p>
+                <p>🏷️ Bún Bò, Miền Trung</p>
+                <span class="card-badge">⭐ 4.7</span>
+              </div>
+            </a>
+            <a class="card" href="restaurant-detail.html">
+              <img
+                src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=400&h=200&fit=crop"
+                alt="Cơm Tấm"
+              />
+              <div class="card-body">
+                <h3>Cơm Tấm Sài Gòn</h3>
+                <p>📍 Cầu Giấy, Hà Nội</p>
+                <p>🏷️ Cơm, Miền Nam</p>
+                <span class="card-badge">⭐ 4.6</span>
+              </div>
+            </a>
+            <a class="card" href="restaurant-detail.html">
+              <img
+                src="https://images.unsplash.com/photo-1542814760-5e04a0e35b62?w=400&h=200&fit=crop"
+                alt="Bánh Mì"
+              />
+              <div class="card-body">
+                <h3>Bánh Mì 25</h3>
+                <p>📍 Ba Đình, Hà Nội</p>
+                <p>🏷️ Bánh Mì, Ăn Vặt</p>
+                <span class="card-badge">⭐ 4.9</span>
+              </div>
+            </a>
+            <a class="card" href="restaurant-detail.html">
+              <img
+                src="https://images.unsplash.com/photo-1511910849309-0dffb8785146?w=400&h=200&fit=crop"
+                alt="Chả Cá"
+              />
+              <div class="card-body">
+                <h3>Chả Cá Lã Vọng</h3>
+                <p>📍 Hàng Sơn, Hà Nội</p>
+                <p>🏷️ Chả Cá, Đặc Sản</p>
+                <span class="card-badge">⭐ 4.8</span>
+              </div>
+            </a>
+            <a class="card" href="restaurant-detail.html">
+              <img
+                src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=200&fit=crop"
+                alt="Bún Chả"
+              />
+              <div class="card-body">
+                <h3>Bún Chả Hương Liên</h3>
+                <p>📍 Đống Đa, Hà Nội</p>
+                <p>🏷️ Bún Chả, Đặc Sản</p>
+                <span class="card-badge">⭐ 4.9</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="sideBar">
+          <div class="menu">
+            <ul>
+              <li class="title">Danh mục</li>
+              <li><a href="index.html">🏠 Trang chủ</a></li>
+              <li><a href="restaurant-list.html">🍜 Danh sách quán</a></li>
+              <li><a href="search.html">🔎 Tìm quán</a></li>
+              <li><a href="write-review.html">✍️ Viết review</a></li>
+              <li><a href="review-list.html">⭐ Danh sách review</a></li>
+              <li><a href="comment.html">💬 Bình luận</a></li>
+              <li><a href="about.html">ℹ️ Giới thiệu</a></li>
+            </ul>
+          </div>
         </div>
       </div>
-
-      <div class="sideBar">
-        <div class="menu">
-          <ul>
-            <li class="title">Danh mục</li>
-            <li><a href="index.html">🏠 Trang chủ</a></li>
-            <li><a href="restaurant-list.html">🍜 Danh sách quán</a></li>
-            <li><a href="search.html">🔎 Tìm quán</a></li>
-            <li><a href="write-review.html">✍️ Viết review</a></li>
-            <li><a href="review-list.html">⭐ Danh sách review</a></li>
-            <li><a href="comment.html">💬 Bình luận</a></li>
-            <li><a href="about.html">ℹ️ Giới thiệu</a></li>
-          </ul>
+      <div class="footer">
+        <div class="footer-col">
+          <h3>Liên hệ</h3>
+          <a href="mailto:huyn65830@gmail.com">📧 huyn65830@gmail.com</a>
+          <a href="tel:0344464495">📞 0344464495</a>
         </div>
+        <div class="lenDau"><a href="#top">⬆ Lên đầu trang</a></div>
       </div>
     </div>
-    <div class="footer">
-      <div class="footer-col">
-        <h3>Liên hệ</h3>
-        <a href="mailto:huyn65830@gmail.com">📧 huyn65830@gmail.com</a>
-        <a href="tel:0344464495">📞 0344464495</a>
-      </div>
-      <div class="lenDau"><a href="#top">⬆ Lên đầu trang</a></div>
-    </div>
-  </div>
-</body>
+  </body>
 </html>

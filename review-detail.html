@@ -1,93 +1,159 @@
 <!doctype html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .article { background: white; border-radius: var(--radius); padding: 30px; box-shadow: var(--shadow); }
-    .article h1 { font-size: 26px; color: var(--primary); margin: 0 0 10px; }
-    .article .meta { font-size: 13px; color: #aaa; margin-bottom: 20px; }
-    .article img { width: 100%; border-radius: var(--radius); margin: 16px 0; max-height: 380px; object-fit: cover; }
-    .article p { line-height: 1.8; font-size: 15px; color: #444; }
-    .article .rating { font-size: 28px; margin: 16px 0; }
-    .btn-row { display: flex; gap: 12px; margin-top: 20px; }
-    .btn { display: inline-block; padding: 10px 22px; border-radius: 30px; font-weight: 700; font-size: 14px; text-decoration: none; transition: transform 0.2s; }
-    .btn-primary { background: var(--primary); color: white; }
-    .btn-outline { border: 2px solid var(--primary); color: var(--primary); }
-    .btn:hover { transform: scale(1.04); }
-  </style>
-  <title>Chi Tiết Review - Food Review</title>
-</head>
-<body>
-  <header class="header">
-    <a class="logo" href="index.html">
-      <img src="https://media.istockphoto.com/id/1290505863/vi/vec-to/c%C6%A1m-b%C3%A1t-c%C3%B4-l%E1%BA%ADp-tr%C3%AAn-n%E1%BB%81n-tr%E1%BA%AFng.jpg?s=612x612&w=0&k=20&c=3qtQo8IqxiMQhI6DiPul7o05c0ZNXdVW-Fc92qXLWvw=" />
-      Food Review
-    </a>
-    <div class="headerPhai">
-      <a class="s" href="index.html">Trang Chủ</a>
-      <a class="s" href="restaurant-list.html">Danh Sách Quán</a>
-      <a class="s" href="search.html">Tìm Quán</a>
-      <a class="s" href="write-review.html">Viết Review</a>
-      <a class="s active" href="review-list.html">Bài Review</a>
-      <a class="s" href="about.html">Giới Thiệu</a>
-    </div>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .article {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+      .article h1 {
+        font-size: 26px;
+        color: #c0392b;
+        margin: 0 0 10px;
+      }
+      .article .meta {
+        font-size: 13px;
+        color: #aaa;
+        margin-bottom: 20px;
+      }
+      .article img {
+        width: 100%;
+        border-radius: 12px;
+        margin: 16px 0;
+        max-height: 380px;
+        object-fit: cover;
+      }
+      .article p {
+        line-height: 1.8;
+        font-size: 15px;
+        color: #444;
+      }
+      .article .rating {
+        font-size: 28px;
+        margin: 16px 0;
+      }
+      .btn-row {
+        display: flex;
+        gap: 12px;
+        margin-top: 20px;
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 22px;
+        border-radius: 30px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+        transition: transform 0.2s;
+      }
+      .btn-primary {
+        background: #c0392b;
+        color: white;
+      }
+      .btn-outline {
+        border: 2px solid #c0392b;
+        color: #c0392b;
+      }
+      .btn:hover {
+        transform: scale(1.04);
+      }
+    </style>
+    <title>Chi Tiết Review - Food Review</title>
+  </head>
+  <body>
+    <header class="header">
+      <a class="logo" href="index.html">
+        <img
+          src="https://media.istockphoto.com/id/1290505863/vi/vec-to/c%C6%A1m-b%C3%A1t-c%C3%B4-l%E1%BA%ADp-tr%C3%AAn-n%E1%BB%81n-tr%E1%BA%AFng.jpg?s=612x612&w=0&k=20&c=3qtQo8IqxiMQhI6DiPul7o05c0ZNXdVW-Fc92qXLWvw="
+        />
+        Food Review
+      </a>
+      <div class="headerPhai">
+        <a class="s" href="index.html">Trang Chủ</a>
+        <a class="s" href="restaurant-list.html">Danh Sách Quán</a>
+        <a class="s" href="search.html">Tìm Quán</a>
+        <a class="s" href="write-review.html">Viết Review</a>
+        <a class="s active" href="review-list.html">Bài Review</a>
+        <a class="s" href="about.html">Giới Thiệu</a>
+      </div>
+    </header>
 
-  <div class="wrapper">
-    <div class="wrappercontent">
-      <div class="content">
-        <p style="font-size:13px; color:#aaa;">
-          <a href="review-list.html" style="color:var(--primary);">Bài review</a> › Phở Bà Lan
-        </p>
-        <div class="article">
-          <h1>Phở Bà Lan - Hương vị truyền thống giữa lòng Hà Nội</h1>
-          <div class="meta">✍️ Nguyễn Văn A &nbsp;|&nbsp; 📅 10/03/2026 &nbsp;|&nbsp; 🍜 <a href="restaurant-detail.html" style="color:var(--primary);">Phở Bà Lan</a></div>
-          <div class="rating">⭐⭐⭐⭐⭐ 5/5</div>
-          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=900&h=400&fit=crop" alt="Phở Bà Lan" />
-          <p>
-            Tôi đã đến thăm quán phở này trong một buổi sáng mùa đông lạnh giá. Không khí se lạnh của Hà Nội càng làm tô phở thêm phần hấp dẫn và ấm lòng.
+    <div class="wrapper">
+      <div class="wrappercontent">
+        <div class="content">
+          <p style="font-size: 13px; color: #aaa">
+            <a href="review-list.html" style="color: #c0392b">Bài review</a>
+            › Phở Bà Lan
           </p>
-          <p>
-            <strong>Nước dùng:</strong> Được hầm từ xương bò và gia vị trong hơn 12 tiếng, nước dùng trong vắt, thơm mùi hồi quế đặc trưng. Vị ngọt tự nhiên không cần mì chính.
-          </p>
-          <p>
-            <strong>Thịt bò:</strong> Thịt bò tươi, thái mỏng, chín vừa phải. Có thể chọn tái, chín hoặc gầu giòn. Phần thịt khá nhiều so với giá tiền.
-          </p>
-          <p>
-            <strong>Không gian:</strong> Quán nhỏ, bàn gỗ cũ kỹ nhưng sạch sẽ. Đông khách từ sáng sớm. Nên đến trước 8 giờ để tránh xếp hàng chờ.
-          </p>
-          <div class="btn-row">
-            <a class="btn btn-primary" href="comment.html">💬 Bình Luận</a>
-            <a class="btn btn-outline" href="restaurant-detail.html">🏪 Xem Quán</a>
+          <div class="article">
+            <h1>Phở Bà Lan - Hương vị truyền thống giữa lòng Hà Nội</h1>
+            <div class="meta">
+              ✍️ Nguyễn Văn A &nbsp;|&nbsp; 📅 10/03/2026 &nbsp;|&nbsp; 🍜
+              <a href="restaurant-detail.html" style="color: #c0392b"
+                >Phở Bà Lan</a
+              >
+            </div>
+            <div class="rating">⭐⭐⭐⭐⭐ 5/5</div>
+            <img
+              src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=900&h=400&fit=crop"
+              alt="Phở Bà Lan"
+            />
+            <p>
+              Tôi đã đến thăm quán phở này trong một buổi sáng mùa đông lạnh
+              giá. Không khí se lạnh của Hà Nội càng làm tô phở thêm phần hấp
+              dẫn và ấm lòng.
+            </p>
+            <p>
+              <strong>Nước dùng:</strong> Được hầm từ xương bò và gia vị trong
+              hơn 12 tiếng, nước dùng trong vắt, thơm mùi hồi quế đặc trưng. Vị
+              ngọt tự nhiên không cần mì chính.
+            </p>
+            <p>
+              <strong>Thịt bò:</strong> Thịt bò tươi, thái mỏng, chín vừa phải.
+              Có thể chọn tái, chín hoặc gầu giòn. Phần thịt khá nhiều so với
+              giá tiền.
+            </p>
+            <p>
+              <strong>Không gian:</strong> Quán nhỏ, bàn gỗ cũ kỹ nhưng sạch sẽ.
+              Đông khách từ sáng sớm. Nên đến trước 8 giờ để tránh xếp hàng chờ.
+            </p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="comment.html">💬 Bình Luận</a>
+              <a class="btn btn-outline" href="restaurant-detail.html"
+                >🏪 Xem Quán</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="sideBar">
+          <div class="menu">
+            <ul>
+              <li class="title">Danh mục</li>
+              <li><a href="index.html">🏠 Trang chủ</a></li>
+              <li><a href="restaurant-list.html">🍜 Danh sách quán</a></li>
+              <li><a href="search.html">🔎 Tìm quán</a></li>
+              <li><a href="write-review.html">✍️ Viết review</a></li>
+              <li><a href="review-list.html">⭐ Danh sách review</a></li>
+              <li><a href="comment.html">💬 Bình luận</a></li>
+              <li><a href="about.html">ℹ️ Giới thiệu</a></li>
+            </ul>
           </div>
         </div>
       </div>
-
-      <div class="sideBar">
-        <div class="menu">
-          <ul>
-            <li class="title">Danh mục</li>
-            <li><a href="index.html">🏠 Trang chủ</a></li>
-            <li><a href="restaurant-list.html">🍜 Danh sách quán</a></li>
-            <li><a href="search.html">🔎 Tìm quán</a></li>
-            <li><a href="write-review.html">✍️ Viết review</a></li>
-            <li><a href="review-list.html">⭐ Danh sách review</a></li>
-            <li><a href="comment.html">💬 Bình luận</a></li>
-            <li><a href="about.html">ℹ️ Giới thiệu</a></li>
-          </ul>
+      <div class="footer">
+        <div class="footer-col">
+          <h3>Liên hệ</h3>
+          <a href="mailto:huyn65830@gmail.com">📧 huyn65830@gmail.com</a>
+          <a href="tel:0344464495">📞 0344464495</a>
         </div>
+        <div class="lenDau"><a href="#top">⬆ Lên đầu trang</a></div>
       </div>
     </div>
-    <div class="footer">
-      <div class="footer-col">
-        <h3>Liên hệ</h3>
-        <a href="mailto:huyn65830@gmail.com">📧 huyn65830@gmail.com</a>
-        <a href="tel:0344464495">📞 0344464495</a>
-      </div>
-      <div class="lenDau"><a href="#top">⬆ Lên đầu trang</a></div>
-    </div>
-  </div>
-</body>
+  </body>
 </html>
