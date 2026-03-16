@@ -35,7 +35,7 @@ body {
   justify-content: space-between;
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* cho moi trinh duyet */
   border-bottom: 2px solid #c0392b;
   z-index: 1000;
   padding: 0 30px;
@@ -115,7 +115,7 @@ body {
   width: 220px;
   flex-shrink: 0;
   height: fit-content;
-  max-height: calc(100vh - 100px);
+  max-height: 318px;
   overflow-y: auto;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);

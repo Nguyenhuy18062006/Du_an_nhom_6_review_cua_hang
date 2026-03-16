@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>login</title>
+  </head>
+
+  <style>
+    .login {
+      border: 1px solid black;
+      width: 402px;
+      height: 592px;
+      margin: 125px auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+    .top_login {
+      background: linear-gradient(
+        135deg,
+        #c0392b 0%,
+        #e74c3c 60%,
+        #f39c12 100%
+      );
+      height: 90px;
+      border-radius: 12px 12px 0 0;
+      display: flex;
+      justify-items: center;
+      padding: 18px;
+      font-size: 20px;
+      font-family: "Montserrat", Arial, sans-serif;
+      font-weight: 600;
+    }
+    .body_login {
+      background-color: aliceblue;
+      height: 410px;
+      border-radius: 0 0 12px 12px;
+    }
+    .body_login h1 {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding-top: 20px;
+    }
+    .submittome {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 40px;
+      gap: 33px;
+    }
+    .submittome button {
+      background: #c0392b;
+      color: white;
+      border-radius: 30px;
+      height: 30px;
+      width: 70px;
+    }
+    .submittome button:hover {
+      transform: translateY(-3px);
+      background-color: #f39c12;
+    }
+    .nhap_ten input,
+    .nhap_mk input,
+    .nhap_mk_XacNhan input {
+      border-radius: 12px;
+      width: 220px; /* dài hơn */
+      height: 36px;
+      padding: 0 12px; /* padding ngang để chữ không sát viền */
+      box-sizing: border-box; /* tránh bị lệch kích thước */
+    }
+    .nhap_ten:hover {
+      color: #f39c12;
+      transform: translateY(-1px);
+    }
+    .nhap_mk:hover {
+      color: #f39c12;
+      transform: translateY(-1px);
+    }
+    .nhap_mk_XacNhan:hover {
+      color: #f39c12;
+      transform: translateY(-1px);
+    }
+    .footer-login {
+      background: linear-gradient(135deg, #c0392b 0%, #e74c3c 40%, #f39c12 70%);
+      height: 90px;
+      border-radius: 0 0 12px 12px;
+      display: flex;
+      padding: 23px;
+      font-size: 20px;
+    }
+    .option {
+      display: flex;
+      padding: 0 290px;
+      font-size: 12px;
+    }
+    .option a {
+      color: black;
+    }
+    .option a:hover {
+      color: #f39c12;
+    }
+  </style>
+  <body>
+    <header class="header">
+      <a class="logo" href="index.html">
+        <img
+          src="https://media.istockphoto.com/id/1290505863/vi/vec-to/c%C6%A1m-b%C3%A1t-c%C3%B4-l%E1%BA%ADp-tr%C3%AAn-n%E1%BB%81n-tr%E1%BA%AFng.jpg?s=612x612&w=0&k=20&c=3qtQo8IqxiMQhI6DiPul7o05c0ZNXdVW-Fc92qXLWvw="
+        />
+        Food Review
+      </a>
+      <div class="headerPhai">
+        <a class="s active" href="index.html">Trang Chủ</a>
+        <a class="s" href="restaurant-list.html">Danh Sách Quán</a>
+        <a class="s" href="search.html">Tìm Quán</a>
+        <a class="s" href="write-review.html">Viết Review</a>
+        <a class="s" href="review-list.html">Bài Review</a>
+        <a class="s" href="about.html">Giới Thiệu</a>
+        <a class="s" href="login.html">
+          <img
+            src="https://www.clipartmax.com/png/full/15-153139_big-image-login-icon-with-transparent-background.pnghttps://www.clipartmax.com/png/full/15-153139_big-image-login-icon-with-transparent-background.png"
+            style="width: 12px; height: 12px"
+          />
+          Đăng Nhập/Đăng Ký
+        </a>
+      </div>
+    </header>
+    <div class="login">
+      <div class="top_login">
+        <img
+          src="https://www.clipartmax.com/png/full/15-153139_big-image-login-icon-with-transparent-background.pnghttps://www.clipartmax.com/png/full/15-153139_big-image-login-icon-with-transparent-background.png"
+          class="logo"
+        />
+        <p>Sign up</p>
+      </div>
+      <div class="body_login">
+        <h1>Đăng Ký</h1>
+        <div class="submittome">
+          <div class="nhap_ten">
+            <input type="email" placeholder="Nhập tên người dùng, email" />
+          </div>
+          <div class="nhap_mk">
+            <input type="password" placeholder="Nhập mật khẩu" />
+          </div>
+          <div class="nhap_mk_XacNhan">
+            <input type="password" placeholder="Xác Nhận mật khẩu" />
+          </div>
+          <a href="index.html">
+            <button>xác nhận</button>
+          </a>
+        </div>
+        <div class="option">
+          <a href="login.html">Đăng Nhập</a>
+          <p>/</p>
+          <a href="sign_up.html">Đăng ký</a>
+        </div>
+      </div>
+      <div class="footer-login">
+        <div>
+          <a class="logo">
+            <img
+              src="https://media.istockphoto.com/id/1290505863/vi/vec-to/c%C6%A1m-b%C3%A1t-c%C3%B4-l%E1%BA%ADp-tr%C3%AAn-n%E1%BB%81n-tr%E1%BA%AFng.jpg?s=612x612&w=0&k=20&c=3qtQo8IqxiMQhI6DiPul7o05c0ZNXdVW-Fc92qXLWvw="
+            />
+            Food Review
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

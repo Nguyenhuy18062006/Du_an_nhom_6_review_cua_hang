@@ -90,6 +90,13 @@
         <a class="s active" href="write-review.html">Viết Review</a>
         <a class="s" href="review-list.html">Bài Review</a>
         <a class="s" href="about.html">Giới Thiệu</a>
+        <a class="s" href="login.html">
+          <img
+            src="https://www.clipartmax.com/png/full/15-153139_big-image-login-icon-with-transparent-background.pnghttps://www.clipartmax.com/png/full/15-153139_big-image-login-icon-with-transparent-background.png"
+            style="width: 12px; height: 12px"
+          />
+          Đăng Nhập/Đăng Ký
+        </a>
       </div>
     </header>
 
@@ -175,13 +182,6 @@
         <div class="lenDau"><a href="#top">⬆ Lên đầu trang</a></div>
       </div>
     </div>
-    <script>
-      function setRating(n) {
-        const stars = document.querySelectorAll("#stars span");
-        stars.forEach(
-          (s, i) => (s.style.filter = i < n ? "brightness(1)" : "grayscale(1)"),
-        );
-      }
-    </script>
+    <script src="write-review-script.js"></script>
   </body>
 </html>
