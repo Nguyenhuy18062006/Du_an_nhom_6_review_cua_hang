@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+      .article {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+      .article h1 {
+        font-size: 26px;
+        color: #c0392b;
+        margin: 0 0 10px;
+      }
+      .article .meta {
+        font-size: 13px;
+        color: #aaa;
+        margin-bottom: 20px;
+      }
+      .article img {
+        width: 100%;
+        border-radius: 12px;
+        margin: 16px 0;
+        max-height: 380px;
+        object-fit: cover;
+      }
+      .article p {
+        line-height: 1.8;
+        font-size: 15px;
+        color: #444;
+      }
+      .article .rating {
+        font-size: 28px;
+        margin: 16px 0;
+      }
+      .btn-row {
+        display: flex;
+        gap: 12px;
+        margin-top: 20px;
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 22px;
+        border-radius: 30px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+        transition: transform 0.2s;
+      }
+      .btn-primary {
+        background: #c0392b;
+        color: white;
+      }
+      .btn-outline {
+        border: 2px solid #c0392b;
+        color: #c0392b;
+      }
+      .btn:hover {
+        transform: scale(1.04);
+      }
+    </style>
+    <title>Chi Tiết Review - Food Review</title>
+  </head>
+  <body>
+    <header class="header">
+      <a class="logo" href="/index.html">
+        <img
+          src="https://media.istockphoto.com/id/1290505863/vi/vec-to/c%C6%A1m-b%C3%A1t-c%C3%B4-l%E1%BA%ADp-tr%C3%AAn-n%E1%BB%81n-tr%E1%BA%AFng.jpg?s=612x612&w=0&k=20&c=3qtQo8IqxiMQhI6DiPul7o05c0ZNXdVW-Fc92qXLWvw="
+        />
+        Food Review
+      </a>
+      <div class="headerPhai">
+        <a class="s" href="/index.html">Trang Chủ</a>
+        <a class="s" href="/restaurant-list.html">Danh Sách Quán</a>
+        <a class="s" href="/search.html">Tìm Quán</a>
+        <a class="s" href="/write-review.html">Viết Review</a>
+        <a class="s active" href="/review-list.html">Bài Review</a>
+        <a class="s" href="/about.html">Giới Thiệu</a>
+      </div>
+    </header>
+
+    <div class="wrapper">
+      <div class="wrappercontent">
+        <div class="content">
+          <p style="font-size: 13px; color: #aaa">
+            <a href="/review-list.html" style="color: #c0392b">Bài review</a>
+            ›Bánh Mì 25
+          </p>
+          <div class="article">
+            <h1>Bánh Mì 25</h1>
+            <div class="meta">
+              ✍️ Nguyễn Văn H &nbsp;|&nbsp; 📅 5/03/2026 &nbsp;|&nbsp; 🍜
+              <a href="/restaurant-detail.html" style="color: #c0392b"
+                >Bánh Mì 25</a
+              >
+            </div>
+            <div class="rating">⭐⭐⭐⭐⭐ 5/5</div>
+            <img
+              src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=900&h=400&fit=crop"
+              alt="Bánh Mì 25"
+            />
+            <p>
+              Theo cảm nhận của mình, bánh mì ở đây khá ngon, vỏ bánh giòn và
+              nhân đậm vị. Món ăn tiện lợi, dễ ăn và phù hợp cho bữa sáng hoặc
+              ăn nhanh. 🥖✨
+            </p>
+            <p>
+              <strong>Hương vị:</strong>
+              Bánh mì có hương vị đậm đà, vỏ bánh giòn và thơm. Nhân bánh được
+              nêm nếm vừa ăn, kết hợp với pate, thịt, rau và nước sốt tạo nên
+              hương vị rất hấp dẫn.
+            </p>
+            <p>
+              <strong>Chất lượng:</strong>
+              Nguyên liệu tươi ngon, bánh mì nóng giòn và nhân bánh đầy đặn. Rau
+              ăn kèm tươi nên làm cho món ăn trở nên ngon và cân bằng hơn.
+            </p>
+            <p>
+              <strong>Không gian:</strong>
+              Không gian quán tuy nhỏ nhưng sạch sẽ và gọn gàng. Quán phục vụ
+              nhanh nên rất tiện cho những người muốn ăn nhanh hoặc mang đi.
+            </p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="/comment.html">💬 Bình Luận</a>
+              <a class="btn btn-outline" href="/restaurant-detail.html"
+                >🏪 Xem Quán</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="sideBar">
+          <div class="menu">
+            <ul>
+              <li class="title">Danh mục</li>
+              <li><a href="/index.html">🏠 Trang chủ</a></li>
+              <li><a href="/restaurant-list.html">🍜 Danh sách quán</a></li>
+              <li><a href="/search.html">🔎 Tìm quán</a></li>
+              <li><a href="/write-review.html">✍️ Viết review</a></li>
+              <li><a href="/review-list.html">⭐ Danh sách review</a></li>
+              <li><a href="/comment.html">💬 Bình luận</a></li>
+              <li><a href="/about.html">ℹ️ Giới thiệu</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="footer-col">
+          <h3>Liên hệ</h3>
+          <a href="mailto:huyn65830@gmail.com">📧 huyn65830@gmail.com</a>
+          <a href="tel:0344464495">📞 0344464495</a>
+        </div>
+        <div class="lenDau"><a href="#top">⬆ Lên đầu trang</a></div>
+      </div>
+    </div>
+  </body>
+</html>

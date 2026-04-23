@@ -346,3 +346,15 @@ html {
 .hero-btn:hover {
   transform: scale(1.05);
 }
+
+.food-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.food-item {
+  width: 25%;
+  padding: 10px;
+}
+
+/* reponsive */
