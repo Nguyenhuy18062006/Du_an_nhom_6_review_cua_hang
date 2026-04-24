@@ -358,3 +358,32 @@ html {
 }
 
 /* reponsive */
+@media only screen and (max-width: 768px) {
+  /* Ẩn nav links, chỉ còn logo */
+  .headerPhai {
+    display: none;
+  }
+
+  /* Hamburger hiện ra (dự phòng nếu muốn dùng sau) */
+  .hamburger {
+    display: none;
+  }
+
+  /* Layout: bỏ sidebar bên cạnh */
+  .wrappercontent {
+    flex-direction: column;
+    padding: 12px 12px 80px;
+  }
+
+  /* Ẩn sidebar desktop */
+  .sideBar {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 22px;
+  }
+  .hero p {
+    font-size: 14px;
+  }
+}
