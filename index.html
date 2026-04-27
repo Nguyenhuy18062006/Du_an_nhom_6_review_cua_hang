@@ -29,6 +29,9 @@
           Đăng Nhập/Đăng Ký
         </a>
       </div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Mở menu">
+        ☰
+      </button>
     </header>
 
     <div class="wrapper">
@@ -136,48 +139,80 @@
           </div>
           <div style="margin-top: 20px">
             <h2 class="section-title">Hot trend</h2>
-            <h3 class="hero">Xu hướng</h3>
-            <h2 class="section-title">Món ngon năm 2026</h2>
             <div class="tiktok-container">
-              <iframe
-                src="https://www.tiktok.com/player/v1/7516028160320982280"
-                width="325"
-                height="575"
-                frameborder="0"
-                allowfullscreen
-              >
-              </iframe>
+              <div class="tiktok-item">
+                <iframe
+                  src="https://www.tiktok.com/player/v1/7516028160320982280"
+                  frameborder="0"
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
+              </div>
+              <div class="tiktok-item">
+                <iframe
+                  src="https://www.tiktok.com/player/v1/7535448040019201288"
+                  frameborder="0"
+                  allowfullscreen
+                  loading="lazy"
+                >
+                </iframe>
+              </div>
 
-              <iframe
-                src="https://www.tiktok.com/player/v1/7535448040019201288"
-                width="325"
-                height="575"
-                frameborder="0"
-                allowfullscreen
-              >
-              </iframe>
-
-              <iframe
-                src="https://www.tiktok.com/player/v1/7491859474030923026"
-                width="325"
-                height="575"
-                frameborder="0"
-                allowfullscreen
-              >
-              </iframe>
+              <div class="tiktok-item">
+                <iframe
+                  src="https://www.tiktok.com/player/v1/7491859474030923026"
+                  frameborder="0"
+                  allowfullscreen
+                  loading="lazy"
+                >
+                </iframe>
+              </div>
             </div>
           </div>
+          <br />
           <div class="video-section">
-            <h3 class="hero">Sự kì diệu của ẩm thực Việt</h3>
             <h2 class="section-title">Bạn biết gì về ẩm thực Việt ?</h2>
-            <div>
-              <iframe src="https://youtube.com/embed/mJ4rMDDEYhc"></iframe>
-              <iframe src="https://youtube.com/embed/F7I_2APvd9w"></iframe>
-              <iframe src="https://www.youtube.com/embed/AK8NIsD5yks"></iframe>
-              <iframe src="https://www.youtube.com/embed/KdEEVocbv9g"></iframe>
-              <iframe
-                src="https://youtube.com/embed/NSnkb1IAjbE?list=RDNSnkb1IAjbE"
-              ></iframe>
+            <div class="youtube-container">
+              <div class="youtube-item">
+                <iframe
+                  src="https://youtube.com/embed/mJ4rMDDEYhc"
+                  frameborder="0"
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
+              </div>
+              <div class="youtube-item">
+                <iframe
+                  src="https://youtube.com/embed/F7I_2APvd9w"
+                  frameborder="0"
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
+              </div>
+              <div class="youtube-item">
+                <iframe
+                  src="https://www.youtube.com/embed/AK8NIsD5yks"
+                  frameborder="0"
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
+              </div>
+              <div class="youtube-item">
+                <iframe
+                  src="https://www.youtube.com/embed/KdEEVocbv9g"
+                  frameborder="0"
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
+              </div>
+              <div class="youtube-item">
+                <iframe
+                  src="https://youtube.com/embed/NSnkb1IAjbE?list=RDNSnkb1IAjbE"
+                  frameborder="0"
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>
@@ -211,10 +246,11 @@
           <a href="mailto:huyn65830@gmail.com">📧 huyn65830@gmail.com</a>
           <a href="tel:0344464495">📞 0344464495</a>
         </div>
-        <div class="lenDau"><a href="#top">⬆ Lên đầu trang</a></div>
+        <div class="lenDau"><a href="#top">⬆ up</a></div>
       </div>
     </div>
 
     <script src="script.js"></script>
+    <script src="responsive_sidebar.js"></script>
   </body>
 </html>

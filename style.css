@@ -356,34 +356,162 @@ html {
   width: 25%;
   padding: 10px;
 }
+/* phục vụ responsive */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: #c0392b;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 8px;
+  line-height: 1;
+  transition: background 0.2s;
+}
+.hamburger:hover {
+  background: #ff1e00;
+  color: #fff;
+  transition:
+    background 0.15s,
+    padding-left 0.15s;
+}
 
-/* reponsive */
+/* ===== OVERLAY (nền mờ khi sidebar mở) ===== */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  backdrop-filter: blur(2px);
+}
+.sidebar-overlay.active {
+  display: block;
+}
+
+/* TIKTOK */
+.tiktok-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.tiktok-item {
+  flex: 1 1 200px;
+  max-width: 260px;
+  aspect-ratio: 9/16;
+}
+.tiktok-item iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  display: block;
+}
+
+/* YOUTUBE */
+.youtube-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+.youtube-item {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+.youtube-item iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ===== RESPONSIVE ===== */
 @media only screen and (max-width: 768px) {
-  /* Ẩn nav links, chỉ còn logo */
+  /* Ẩn nav links desktop, hiện hamburger */
   .headerPhai {
     display: none;
   }
-
-  /* Hamburger hiện ra (dự phòng nếu muốn dùng sau) */
   .hamburger {
-    display: none;
+    display: flex;
   }
 
-  /* Layout: bỏ sidebar bên cạnh */
+  /* Layout: 1 cột, bỏ gap */
   .wrappercontent {
     flex-direction: column;
     padding: 12px 12px 80px;
+    gap: 0;
   }
 
-  /* Ẩn sidebar desktop */
+  /* Sidebar thành drawer trượt từ phải */
   .sideBar {
-    display: none;
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 240px;
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
+    z-index: 1000;
+    overflow-y: auto;
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.18);
+    padding-top: 60px;
+  }
+  .sideBar.open {
+    right: 0;
   }
 
+  /* Menu title bo góc lại vì drawer full height */
+  /* Menu title bo góc lại vì drawer full height */
+  .menu .title {
+    border-radius: 0;
+  }
+  /* Hero text nhỏ hơn */
+  .hero {
+    padding: 20px 16px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+  }
   .hero h1 {
-    font-size: 22px;
+    font-size: 18px;
+    word-break: break-word;
   }
   .hero p {
-    font-size: 14px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .hero-btn {
+    font-size: 13px;
+    padding: 8px 18px;
+  }
+
+  /* Section title gọn hơn */
+  .section-title {
+    font-size: 16px;
+    padding-left: 10px;
+    border-left-width: 4px;
+    margin-bottom: 12px;
+    word-break: break-word;
+  }
+
+  /* Slider card nhỏ hơn tí */
+  .slider {
+    grid-auto-columns: calc(100vw - 80px);
+    gap: 14px;
+  }
+  .slider-wrapper {
+    margin: 0 22px; /* tạo khoảng trống cho 2 nút prev/next không bị cắt */
+  }
+
+  /* Slide buttons gần vào hơn */
+  .prev {
+    left: -14px;
+  }
+  .next {
+    right: -14px;
   }
 }

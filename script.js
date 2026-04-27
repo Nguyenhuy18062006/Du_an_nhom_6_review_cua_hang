@@ -1,5 +1,9 @@
 const slider = document.getElementById("slider");
-const cardWidth = 270;
+// const cardWidth = 270;
+function getCardWidth() {
+  const card = slider.querySelector(".card");
+  return card ? card.offsetWidth + 20 : 270;
+}
 
 // nhân đôi card
 slider.innerHTML += slider.innerHTML;
@@ -33,12 +37,11 @@ function autoSlide() {
 }
 
 autoSlide();
-
 // nút next
 document.querySelector(".next").onclick = function () {
   userInteracting = true;
   slider.style.scrollBehavior = "smooth";
-  slider.scrollLeft += cardWidth;
+  slider.scrollLeft += getCardWidth();
   setTimeout(() => {
     checkLoop();
     userInteracting = false;
@@ -49,7 +52,7 @@ document.querySelector(".next").onclick = function () {
 document.querySelector(".prev").onclick = function () {
   userInteracting = true;
   slider.style.scrollBehavior = "smooth";
-  slider.scrollLeft -= cardWidth;
+  slider.scrollLeft -= getCardWidth();
   setTimeout(() => {
     checkLoop();
     userInteracting = false;
