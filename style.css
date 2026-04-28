@@ -505,6 +505,7 @@ html {
   }
   .slider-wrapper {
     margin: 0 22px; /* tạo khoảng trống cho 2 nút prev/next không bị cắt */
+    width: 335px;
   }
 
   /* Slide buttons gần vào hơn */
@@ -513,5 +514,8 @@ html {
   }
   .next {
     right: -14px;
+  }
+  .tiktok-item {
+    margin: 0 auto;
   }
 }
