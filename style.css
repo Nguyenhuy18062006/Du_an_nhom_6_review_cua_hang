@@ -1,70 +1,84 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap");
+/* ↑ Tải font từ Google Fonts - cần có internet mới hiển thị đúng font */
 
 /* :root {
-  --primary: #c0392b;
-  --primary-dark: #96281b;
-  --accent: #f39c12;
-  --text: #1a1a2e;
-  --text-light: #555;
-  --bg: #fafafa;
+  --primary: #c0392b;     màu đỏ chính
+  --primary-dark: #96281b; màu đỏ đậm hơn
+  --accent: #f39c12;      màu vàng cam nhấn
+  --text: #1a1a2e;        màu chữ chính
+  --text-light: #555;     màu chữ phụ
+  --bg: #fafafa;          màu nền trang
   --white: #fff;
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   --radius: 12px;
+  ↑ Đang bị comment - nếu bỏ comment thì có thể dùng var(--primary)
+    thay cho các mã màu hex, giúp đổi màu toàn trang chỉ cần sửa 1 chỗ
 } */
 
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; /* width/height tính luôn cả padding + border, không bị phình ra ngoài */
 }
 
 body {
-  background-color: #fafafa;
-  margin: 0;
-  font-family: "Montserrat", Arial, sans-serif;
-  color: #1a1a2e;
+  background-color: #fafafa; /* nền xám trắng nhẹ cho cả trang */
+  margin: 0; /* xoá khoảng trắng ~8px mà trình duyệt tự thêm vào body */
+  font-family:
+    "Montserrat", Arial, sans-serif; /* font chính, Arial là font dự phòng nếu không tải được */
+  color: #1a1a2e; /* màu chữ mặc định toàn trang */
 }
 
-/* HEADER */
+/* ===================== HEADER ===================== */
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 70px;
+  position: fixed; /* ⚠️ cố định trên màn hình, KHÔNG cuộn theo trang */
+  top: 0; /* dán sát mép trên */
+  left: 0; /* dán sát mép trái */
+  width: 100%; /* kéo hết chiều ngang màn hình */
+  height: 70px; /* chiều cao cố định - các trang khác dùng margin-top: 70px để tránh bị che */
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px); /* cho moi trinh duyet */
-  border-bottom: 2px solid #c0392b;
-  z-index: 1000;
-  padding: 0 30px;
+  align-items: center; /* căn logo và menu giữa theo chiều dọc */
+  justify-content: space-between; /* logo bên trái, menu bên phải */
+  background: rgba(
+    255,
+    255,
+    255,
+    0.92
+  ); /* trắng hơi trong suốt để thấy hiệu ứng blur phía sau */
+  backdrop-filter: blur(
+    12px
+  ); /* làm mờ nội dung phía sau header - hiệu ứng kính mờ */
+  -webkit-backdrop-filter: blur(
+    12px
+  ); /* ⚠️ bắt buộc có dòng này thì Safari mới hiển thị được blur */
+  border-bottom: 2px solid #c0392b; /* đường viền đỏ phân tách header với nội dung */
+  z-index: 1000; /* ⚠️ số càng cao càng nằm trên - phải cao hơn overlay (999) để không bị che */
+  padding: 0 30px; /* không có padding trên/dưới, chỉ cách 30px trái/phải để không sát mép */
 }
 
 .logo {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
+  align-items: center; /* căn icon và chữ "Food Review" thẳng hàng */
+  gap: 10px; /* khoảng cách giữa icon và chữ */
+  text-decoration: none; /* xoá gạch chân vì logo là thẻ <a> */
   color: #c0392b;
   font-weight: 800;
   font-size: 22px;
-  letter-spacing: 1px;
+  letter-spacing: 1px; /* giãn chữ ra một chút cho đẹp */
 }
 .logo img {
   height: 44px;
   width: 44px;
-  border-radius: 50%;
-  object-fit: cover;
+  border-radius: 50%; /* cắt ảnh thành hình tròn */
+  object-fit: cover; /* ảnh không bị méo dù tỉ lệ gốc khác 1:1 */
 }
 
 .headerPhai {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 4px; /* khoảng cách nhỏ giữa các nút menu */
 }
 
 .s {
+  /* class dùng cho tất cả các link trong menu header */
   text-decoration: none;
   padding: 6px 14px;
   color: #1a1a2e;
@@ -73,145 +87,146 @@ body {
   border-radius: 6px;
   transition:
     background 0.2s,
-    color 0.2s;
+    /* đổi màu nền mất 0.2 giây - tạo hiệu ứng mượt khi hover */ color 0.2s; /* đổi màu chữ mất 0.2 giây */
 }
 .s:hover,
 .s.active {
-  background: #c0392b;
+  /* hover = rê chuột vào, active = trang đang mở */
+  background: #c0392b; /* nền đỏ khi hover hoặc đang active */
   color: white;
 }
 .s img {
   height: 20px;
   width: 20px;
-  vertical-align: middle;
+  vertical-align: middle; /* căn icon thẳng hàng với chữ bên cạnh */
 }
 
-/* WRAPPER */
+/* ===================== WRAPPER ===================== */
 .wrapper {
-  min-height: 100vh;
+  min-height: 100vh; /* tối thiểu cao bằng 1 màn hình, tránh footer bị lơ lửng */
 }
 
 .wrappercontent {
-  max-width: 1200px;
-  margin: auto;
+  max-width: 1200px; /* giới hạn chiều rộng tối đa, tránh quá rộng trên màn hình lớn */
+  margin: auto; /* căn giữa trang */
   display: flex;
-  align-items: flex-start;
-  gap: 24px;
-  padding: 16px 16px 90px;
-  margin-top: 70px;
+  align-items: flex-start; /* sidebar và content bắt đầu từ trên xuống, không bị kéo dài bằng nhau */
+  gap: 24px; /* khoảng cách giữa content và sidebar */
+  padding: 16px 16px 90px; /* padding-bottom: 90px để nội dung không bị footer fixed che mất */
+  margin-top: 70px; /* ⚠️ phải bằng height của header (70px) để nội dung không bị header che */
 }
 
 .content {
-  flex: 1;
-  min-width: 0;
+  flex: 1; /* chiếm hết không gian còn lại sau khi sidebar lấy 220px */
+  min-width: 0; /* ⚠️ cần thiết để flex item không bị tràn ra ngoài khi nội dung dài */
 }
 
-/* SIDEBAR */
+/* ===================== SIDEBAR ===================== */
 .sideBar {
   background: #fff;
   color: #1a1a2e;
-  position: sticky;
-  top: 80px;
+  position: sticky; /* cuộn theo trang đến khi chạm top: 80px thì dừng lại - khác fixed */
+  top: 80px; /* dừng cách mép trên 80px (70px header + 10px đệm) */
   width: 220px;
-  flex-shrink: 0;
-  height: fit-content;
-  max-height: 318px;
-  overflow-y: auto;
+  flex-shrink: 0; /* ⚠️ không cho sidebar bị thu nhỏ khi content quá rộng */
+  height: fit-content; /* cao vừa đủ với nội dung bên trong */
+  max-height: 318px; /* nếu menu quá dài thì xuất hiện scrollbar */
+  overflow-y: auto; /* thanh cuộn dọc khi nội dung tràn */
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* bóng đổ nhẹ */
   border: 1px solid #eee;
 }
 
 .menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  list-style: none; /* xoá dấu chấm đầu dòng mặc định của <ul> */
+  padding: 0; /* xoá padding mặc định của <ul> */
+  margin: 0; /* xoá margin mặc định của <ul> */
 }
 
 .menu .title {
   font-weight: 800;
   padding: 12px 14px;
-  background: #c0392b;
+  background: #c0392b; /* tiêu đề "Danh mục" nền đỏ */
   color: white;
   letter-spacing: 0.5px;
   font-size: 15px;
-  border-radius: 12px 12px 0 0;
+  border-radius: 12px 12px 0 0; /* chỉ bo 2 góc trên, 2 góc dưới vuông để nối với menu */
 }
 
 .menu li a {
-  display: block;
+  display: block; /* ⚠️ thẻ <a> mặc định là inline, cần block để padding hoạt động đúng */
   padding: 10px 14px;
   color: #1a1a2e;
   font-weight: 600;
   font-size: 14px;
   transition:
     background 0.15s,
-    padding-left 0.15s;
-  border-bottom: 1px solid #f0f0f0;
+    padding-left 0.15s; /* hiệu ứng trượt sang phải khi hover */
+  border-bottom: 1px solid #f0f0f0; /* đường kẻ ngăn cách giữa các mục */
 }
 .menu li a:hover {
   background: #fff0ee;
   color: #c0392b;
-  padding-left: 20px;
+  padding-left: 20px; /* trượt chữ sang phải 20px khi hover - tạo hiệu ứng động */
 }
 .menu li:last-child a {
-  border-bottom: none;
+  border-bottom: none; /* xoá đường kẻ ở mục cuối cùng */
 }
 
-/* SLIDER */
+/* ===================== SLIDER ===================== */
 .section-title {
   font-size: 22px;
   font-weight: 800;
   color: #c0392b;
-  margin: 0 0 16px 0;
-  border-left: 5px solid #f39c12;
-  padding-left: 12px;
+  margin: 0 0 16px 0; /* chỉ có margin-bottom */
+  border-left: 5px solid #f39c12; /* đường vàng bên trái làm điểm nhấn */
+  padding-left: 12px; /* đẩy chữ ra khỏi đường vàng */
 }
 
 .slider-wrapper {
-  position: relative;
+  position: relative; /* ⚠️ cần có để 2 nút prev/next dùng position: absolute định vị theo cái này */
   display: flex;
   align-items: center;
 }
 
 .slider {
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 250px;
+  grid-auto-flow: column; /* các card xếp theo hàng ngang */
+  grid-auto-columns: 250px; /* mỗi card rộng 250px */
   gap: 20px;
-  overflow: hidden;
+  overflow: hidden; /* ẩn các card bên ngoài vùng nhìn thấy */
   scroll-behavior: smooth;
-  padding: 10px 0;
+  padding: 10px 0; /* tạo khoảng cho bóng đổ của card không bị cắt */
 }
 
 .card {
   background: white;
   border-radius: 12px;
-  overflow: hidden;
+  overflow: hidden; /* ảnh bên trong không tràn ra ngoài bo góc */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition:
     transform 0.2s,
-    box-shadow 0.2s;
-  text-decoration: none;
+    /* hiệu ứng nâng lên khi hover */ box-shadow 0.2s; /* bóng đổ đậm hơn khi hover */
+  text-decoration: none; /* xoá gạch chân vì card là thẻ <a> */
   color: #1a1a2e;
-  display: block;
+  display: block; /* thẻ <a> cần block để chiếm hết chiều rộng */
   border: 1px solid #eee;
 }
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 30px rgba(192, 57, 43, 0.15);
+  transform: translateY(-6px); /* nâng card lên 6px khi hover */
+  box-shadow: 0 10px 30px rgba(192, 57, 43, 0.15); /* bóng đổ đỏ nhạt khi hover */
 }
 .card img {
   width: 100%;
   height: 160px;
-  object-fit: cover;
-  display: block;
+  object-fit: cover; /* ảnh không bị méo, tự cắt để vừa khung */
+  display: block; /* xoá khoảng trắng thừa dưới ảnh (ảnh mặc định là inline) */
 }
 .card-body {
   padding: 14px;
 }
 .card-body h3 {
-  margin: 0 0 6px;
+  margin: 0 0 6px; /* chỉ có margin-bottom */
   font-size: 15px;
   font-weight: 700;
 }
@@ -227,23 +242,25 @@ body {
   font-size: 11px;
   font-weight: 700;
   padding: 2px 8px;
-  border-radius: 20px;
+  border-radius: 20px; /* bo tròn hoàn toàn thành hình viên thuốc */
   margin-top: 6px;
 }
 
-/* NAV BUTTONS */
+/* ===================== NÚT PREV / NEXT SLIDER ===================== */
 .slide-btn {
-  position: absolute;
+  position: absolute; /* ⚠️ định vị theo .slider-wrapper (cha có position: relative) */
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(
+    -50%
+  ); /* ⚠️ kết hợp top:50% + translateY(-50%) để căn giữa dọc chính xác */
   border: none;
   background: white;
   width: 44px;
   height: 44px;
-  border-radius: 50%;
+  border-radius: 50%; /* hình tròn */
   cursor: pointer;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
-  z-index: 10;
+  z-index: 10; /* nằm trên các card slider */
   font-size: 18px;
   color: #c0392b;
   transition:
@@ -252,18 +269,18 @@ body {
 }
 .slide-btn:hover {
   background: #c0392b;
-  color: white;
+  color: white; /* đổi màu ngược lại khi hover */
 }
 .prev {
-  left: -22px;
+  left: -22px; /* nhô ra ngoài slider một nửa (44px/2 = 22px) */
 }
 .next {
-  right: -22px;
+  right: -22px; /* nhô ra ngoài slider một nửa */
 }
 
-/* FOOTER */
+/* ===================== FOOTER ===================== */
 .footer {
-  position: fixed;
+  position: fixed; /* ⚠️ dính cố định ở dưới màn hình, giống header */
   bottom: 0;
   left: 0;
   width: 100%;
@@ -272,7 +289,7 @@ body {
   align-items: center;
   justify-content: space-between;
   background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px); /* hiệu ứng kính mờ giống header */
   border-top: 1.5px solid #eee;
   z-index: 1000;
   padding: 0 40px;
@@ -284,12 +301,13 @@ body {
   gap: 18px;
 }
 .footer-col h3 {
-  margin: 0;
+  margin: 0; /* xoá margin mặc định của h3 */
   font-size: 14px;
   font-weight: 700;
 }
 .footer-col a,
 .lenDau a {
+  /* áp dụng cho cả link footer lẫn nút "lên đầu" */
   text-decoration: none;
   color: #1a1a2e;
   font-size: 13px;
@@ -302,63 +320,57 @@ body {
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* cuộn trang mượt khi click link neo (#id) */
 }
 
-/* HERO BANNER */
+/* ===================== HERO BANNER ===================== */
 .hero {
   background: linear-gradient(135deg, #c0392b 0%, #e74c3c 60%, #f39c12 100%);
+  /* ↑ gradient chéo 135 độ từ đỏ đậm → đỏ nhạt → cam */
   border-radius: 12px;
   padding: 40px 36px;
   margin-bottom: 28px;
   color: white;
-  position: relative;
-  overflow: hidden;
+  position: relative; /* cần có để pseudo-element ::after định vị bên trong */
+  overflow: hidden; /* cắt bỏ phần tử con nếu tràn ra ngoài bo góc */
 }
-/* .hero::after {
-  content: '🍜';
-  position: absolute;
-  right: 30px; bottom: -10px;
-  font-size: 100px;
-  opacity: 0.15;
-} */
 .hero h1 {
-  margin: 0 0 8px;
+  margin: 0 0 8px; /* chỉ margin-bottom */
   font-size: 32px;
   font-weight: 800;
 }
 .hero p {
   margin: 0 0 18px;
   font-size: 16px;
-  opacity: 0.9;
+  opacity: 0.9; /* chữ trắng hơi mờ để tạo độ sâu */
 }
 .hero-btn {
-  display: inline-block;
+  display: inline-block; /* cần để padding hoạt động đúng trên thẻ <a> */
   background: white;
   color: #c0392b;
   font-weight: 700;
   padding: 10px 24px;
-  border-radius: 30px;
+  border-radius: 30px; /* bo tròn thành hình viên thuốc */
   text-decoration: none;
   font-size: 15px;
   transition: transform 0.2s;
 }
 .hero-btn:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* phóng to nhẹ 5% khi hover */
 }
 
 .food-list {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* tự xuống hàng khi hết chỗ */
 }
-
 .food-item {
-  width: 25%;
+  width: 25%; /* 4 item trên 1 hàng (100% / 25% = 4) */
   padding: 10px;
 }
-/* phục vụ responsive */
+
+/* ===================== HAMBURGER (nút ☰ trên mobile) ===================== */
 .hamburger {
-  display: none;
+  display: none; /* ⚠️ ẩn trên desktop, chỉ hiện trên mobile qua @media */
   background: none;
   border: none;
   font-size: 26px;
@@ -372,34 +384,31 @@ html {
 .hamburger:hover {
   background: #ff1e00;
   color: #fff;
-  transition:
-    background 0.15s,
-    padding-left 0.15s;
 }
 
-/* ===== OVERLAY (nền mờ khi sidebar mở) ===== */
+/* ===================== OVERLAY (nền mờ sau sidebar) ===================== */
 .sidebar-overlay {
-  display: none;
+  display: none; /* ẩn mặc định */
   position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 999;
+  inset: 0; /* viết tắt của top:0; right:0; bottom:0; left:0 - phủ toàn màn hình */
+  background: rgba(0, 0, 0, 0.4); /* đen mờ 40% */
+  z-index: 999; /* ⚠️ phải nhỏ hơn sidebar (1000) để sidebar nằm trên overlay */
   backdrop-filter: blur(2px);
 }
 .sidebar-overlay.active {
-  display: block;
+  display: block; /* JS thêm class "active" để hiện overlay khi sidebar mở */
 }
 
-/* TIKTOK */
+/* ===================== TIKTOK ===================== */
 .tiktok-container {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
 }
 .tiktok-item {
-  flex: 1 1 200px;
+  flex: 1 1 200px; /* tối thiểu 200px, tự co giãn để lấp đầy hàng */
   max-width: 260px;
-  aspect-ratio: 9/16;
+  aspect-ratio: 9/16; /* tỉ lệ dọc chuẩn của TikTok */
 }
 .tiktok-item iframe {
   width: 100%;
@@ -408,49 +417,48 @@ html {
   display: block;
 }
 
-/* YOUTUBE */
+/* ===================== YOUTUBE ===================== */
 .youtube-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  /* ↑ tự động chia cột: mỗi cột tối thiểu 260px, tự thêm/bớt cột khi resize */
   gap: 16px;
   margin-top: 12px;
 }
 .youtube-item {
   position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
+  padding-bottom: 56.25%; /* ⚠️ trick responsive video: 56.25% = tỉ lệ 16:9 (9/16 = 0.5625) */
+  height: 0; /* kết hợp với padding-bottom để tạo khung có tỉ lệ cố định */
   overflow: hidden;
 }
 .youtube-item iframe {
-  position: absolute;
+  position: absolute; /* ⚠️ phủ toàn bộ khung .youtube-item */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===================== RESPONSIVE (màn hình ≤ 768px = mobile/tablet) ===================== */
 @media only screen and (max-width: 768px) {
-  /* Ẩn nav links desktop, hiện hamburger */
   .headerPhai {
-    display: none;
+    display: none; /* ẩn menu ngang trên mobile */
   }
   .hamburger {
-    display: flex;
+    display: flex; /* hiện nút ☰ trên mobile */
   }
 
-  /* Layout: 1 cột, bỏ gap */
   .wrappercontent {
-    flex-direction: column;
+    flex-direction: column; /* chuyển từ 2 cột sang 1 cột */
     padding: 12px 12px 80px;
     gap: 0;
   }
 
-  /* Sidebar thành drawer trượt từ phải */
+  /* Sidebar chuyển thành drawer trượt từ phải */
   .sideBar {
     position: fixed;
     top: 0;
-    right: -260px;
+    right: -260px; /* ⚠️ ẩn sang phải ngoài màn hình (rộng 240px + dư 20px) */
     width: 240px;
     height: 100vh;
     max-height: 100vh;
@@ -458,27 +466,26 @@ html {
     z-index: 1000;
     overflow-y: auto;
     transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.18);
-    padding-top: 60px;
+    /* ↑ animation trượt mượt - cubic-bezier(0.4,0,0.2,1) là easing chuẩn của Material Design */
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.18); /* bóng đổ bên trái sidebar */
+    padding-top: 60px; /* chừa chỗ cho nút X ở trên */
   }
   .sideBar.open {
-    right: 0;
+    right: 0; /* ⚠️ JS thêm class "open" → sidebar trượt vào - đây là cách sidebar hoạt động */
   }
 
-  /* Menu title bo góc lại vì drawer full height */
-  /* Menu title bo góc lại vì drawer full height */
   .menu .title {
-    border-radius: 0;
+    border-radius: 0; /* bỏ bo góc vì drawer chiếm full height */
   }
-  /* Hero text nhỏ hơn */
+
   .hero {
     padding: 20px 16px;
     margin-bottom: 16px;
     border-radius: 8px;
   }
   .hero h1 {
-    font-size: 18px;
-    word-break: break-word;
+    font-size: 18px; /* thu nhỏ chữ cho mobile */
+    word-break: break-word; /* tự xuống hàng nếu chữ quá dài */
   }
   .hero p {
     font-size: 13px;
@@ -489,7 +496,6 @@ html {
     padding: 8px 18px;
   }
 
-  /* Section title gọn hơn */
   .section-title {
     font-size: 16px;
     padding-left: 10px;
@@ -498,24 +504,24 @@ html {
     word-break: break-word;
   }
 
-  /* Slider card nhỏ hơn tí */
   .slider {
     grid-auto-columns: calc(100vw - 80px);
+    /* ↑ card rộng bằng màn hình trừ 80px (chừa chỗ cho 2 nút prev/next và padding) */
     gap: 14px;
   }
   .slider-wrapper {
-    margin: 0 22px; /* tạo khoảng trống cho 2 nút prev/next không bị cắt */
+    margin: 0 22px;
     width: 335px;
   }
 
-  /* Slide buttons gần vào hơn */
   .prev {
     left: -14px;
-  }
+  } /* thu vào gần hơn trên mobile */
   .next {
     right: -14px;
   }
+
   .tiktok-item {
-    margin: 0 auto;
+    margin: 0 auto; /* căn giữa video TikTok trên mobile */
   }
 }

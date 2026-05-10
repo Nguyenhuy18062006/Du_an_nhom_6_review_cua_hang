@@ -1,60 +1,75 @@
-const slider = document.getElementById("slider");
-// const cardWidth = 270;
+// Lấy phần tử slider
+var slider = document.getElementById("slider");
+
+// Nhân đôi nội dung để tạo hiệu ứng vòng lặp
+slider.innerHTML = slider.innerHTML + slider.innerHTML;
+
+// Tắt smooth scroll mặc định, sẽ bật thủ công khi cần
+slider.style.scrollBehavior = "auto";
+
+// Biến trạng thái
+var userInteracting = false;
+
+// Lấy chiều rộng của một card
 function getCardWidth() {
-  const card = slider.querySelector(".card");
-  return card ? card.offsetWidth + 20 : 270;
+  var card = slider.querySelector(".card");
+  if (card) {
+    return card.offsetWidth + 20;
+  }
+  return 270;
 }
 
-// nhân đôi card
-slider.innerHTML += slider.innerHTML;
-
-slider.style.scrollBehavior = "smooth";
-
-let isScrolling = false;
-
+// Kiểm tra và nhảy về điểm đối xứng để tạo vòng lặp vô tận
 function checkLoop() {
-  if (slider.scrollLeft >= slider.scrollWidth / 2) {
+  var half = slider.scrollWidth / 2;
+
+  if (slider.scrollLeft >= half) {
     slider.style.scrollBehavior = "auto";
-    slider.scrollLeft -= slider.scrollWidth / 2;
-    slider.style.scrollBehavior = "smooth";
+    slider.scrollLeft = slider.scrollLeft - half;
   }
+
   if (slider.scrollLeft < 0) {
     slider.style.scrollBehavior = "auto";
-    slider.scrollLeft += slider.scrollWidth / 2;
-    slider.style.scrollBehavior = "smooth";
+    slider.scrollLeft = slider.scrollLeft + half;
   }
 }
 
-let animationId;
-let userInteracting = false;
-
+// Hàm tự động cuộn từng frame
 function autoSlide() {
-  if (!userInteracting) {
-    slider.scrollLeft += 0.5;
+  if (userInteracting === false) {
+    slider.scrollLeft = slider.scrollLeft + 0.5;
     checkLoop();
   }
-  animationId = requestAnimationFrame(autoSlide);
+  requestAnimationFrame(autoSlide);
 }
 
+// Bắt đầu tự động cuộn
 autoSlide();
-// nút next
-document.querySelector(".next").onclick = function () {
-  userInteracting = true;
-  slider.style.scrollBehavior = "smooth";
-  slider.scrollLeft += getCardWidth();
-  setTimeout(() => {
-    checkLoop();
-    userInteracting = false;
-  }, 400);
-};
 
-// nút prev
-document.querySelector(".prev").onclick = function () {
+// Xử lý nút Next
+function handleNext() {
   userInteracting = true;
   slider.style.scrollBehavior = "smooth";
-  slider.scrollLeft -= getCardWidth();
-  setTimeout(() => {
+  slider.scrollLeft = slider.scrollLeft + getCardWidth();
+
+  setTimeout(function () {
     checkLoop();
     userInteracting = false;
   }, 400);
-};
+}
+
+// Xử lý nút Prev
+function handlePrev() {
+  userInteracting = true;
+  slider.style.scrollBehavior = "smooth";
+  slider.scrollLeft = slider.scrollLeft - getCardWidth();
+
+  setTimeout(function () {
+    checkLoop();
+    userInteracting = false;
+  }, 400);
+}
+
+// Gắn sự kiện cho nút
+document.querySelector(".next").onclick = handleNext;
+document.querySelector(".prev").onclick = handlePrev;

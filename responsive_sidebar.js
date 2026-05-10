@@ -6,7 +6,7 @@ const overlay = document.getElementById("sidebarOverlay");
 function openSidebar() {
   sideBar.classList.add("open");
   overlay.classList.add("active");
-  hamburgerBtn.textContent = "✕";
+  hamburgerBtn.textContent = "✕"; //Dang loi khong hien thi duoc
   document.body.style.overflow = "hidden";
 }
 
@@ -17,13 +17,19 @@ function closeSidebar() {
   document.body.style.overflow = "";
 }
 
-hamburgerBtn.addEventListener("click", () => {
-  sideBar.classList.contains("open") ? closeSidebar() : openSidebar();
+hamburgerBtn.addEventListener("click", function () {
+  if (sideBar.classList.contains("open")) {
+    closeSidebar();
+  } else {
+    openSidebar();
+  }
 });
 
 overlay.addEventListener("click", closeSidebar);
 
 // Đóng khi click vào link trong sidebar
-sideBar.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", closeSidebar);
+sideBar.querySelectorAll("a").forEach(function (link) {
+  link.addEventListener("click", function () {
+    closeSidebar();
+  });
 });
