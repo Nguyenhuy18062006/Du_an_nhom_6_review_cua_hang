@@ -29,7 +29,7 @@ body {
 
 /* ===================== HEADER ===================== */
 .header {
-  position: fixed; /* ⚠️ cố định trên màn hình, KHÔNG cuộn theo trang */
+  position: fixed; /* cố định trên màn hình, KHÔNG cuộn theo trang */
   top: 0; /* dán sát mép trên */
   left: 0; /* dán sát mép trái */
   width: 100%; /* kéo hết chiều ngang màn hình */
@@ -48,9 +48,9 @@ body {
   ); /* làm mờ nội dung phía sau header - hiệu ứng kính mờ */
   -webkit-backdrop-filter: blur(
     12px
-  ); /* ⚠️ bắt buộc có dòng này thì Safari mới hiển thị được blur */
+  ); /* bắt buộc có dòng này thì Safari mới hiển thị được blur */
   border-bottom: 2px solid #c0392b; /* đường viền đỏ phân tách header với nội dung */
-  z-index: 1000; /* ⚠️ số càng cao càng nằm trên - phải cao hơn overlay (999) để không bị che */
+  z-index: 1000; /* số càng cao càng nằm trên - phải cao hơn overlay (999) để không bị che */
   padding: 0 30px; /* không có padding trên/dưới, chỉ cách 30px trái/phải để không sát mép */
 }
 
@@ -113,12 +113,12 @@ body {
   align-items: flex-start; /* sidebar và content bắt đầu từ trên xuống, không bị kéo dài bằng nhau */
   gap: 24px; /* khoảng cách giữa content và sidebar */
   padding: 16px 16px 90px; /* padding-bottom: 90px để nội dung không bị footer fixed che mất */
-  margin-top: 70px; /* ⚠️ phải bằng height của header (70px) để nội dung không bị header che */
+  margin-top: 70px; /* phải bằng height của header (70px) để nội dung không bị header che */
 }
 
 .content {
   flex: 1; /* chiếm hết không gian còn lại sau khi sidebar lấy 220px */
-  min-width: 0; /* ⚠️ cần thiết để flex item không bị tràn ra ngoài khi nội dung dài */
+  min-width: 0; /* cần thiết để flex item không bị tràn ra ngoài khi nội dung dài */
 }
 
 /* ===================== SIDEBAR ===================== */
@@ -128,7 +128,7 @@ body {
   position: sticky; /* cuộn theo trang đến khi chạm top: 80px thì dừng lại - khác fixed */
   top: 80px; /* dừng cách mép trên 80px (70px header + 10px đệm) */
   width: 220px;
-  flex-shrink: 0; /* ⚠️ không cho sidebar bị thu nhỏ khi content quá rộng */
+  flex-shrink: 0; /*  không cho sidebar bị thu nhỏ khi content quá rộng */
   height: fit-content; /* cao vừa đủ với nội dung bên trong */
   max-height: 318px; /* nếu menu quá dài thì xuất hiện scrollbar */
   overflow-y: auto; /* thanh cuộn dọc khi nội dung tràn */
@@ -154,7 +154,7 @@ body {
 }
 
 .menu li a {
-  display: block; /* ⚠️ thẻ <a> mặc định là inline, cần block để padding hoạt động đúng */
+  display: block; /* thẻ <a> mặc định là inline, cần block để padding hoạt động đúng */
   padding: 10px 14px;
   color: #1a1a2e;
   font-weight: 600;
@@ -184,7 +184,7 @@ body {
 }
 
 .slider-wrapper {
-  position: relative; /* ⚠️ cần có để 2 nút prev/next dùng position: absolute định vị theo cái này */
+  position: relative; /* cần có để 2 nút prev/next dùng position: absolute định vị theo cái này */
   display: flex;
   align-items: center;
 }
@@ -248,11 +248,11 @@ body {
 
 /* ===================== NÚT PREV / NEXT SLIDER ===================== */
 .slide-btn {
-  position: absolute; /* ⚠️ định vị theo .slider-wrapper (cha có position: relative) */
+  position: absolute; /* định vị theo .slider-wrapper (cha có position: relative) */
   top: 50%;
   transform: translateY(
     -50%
-  ); /* ⚠️ kết hợp top:50% + translateY(-50%) để căn giữa dọc chính xác */
+  ); /* kết hợp top:50% + translateY(-50%) để căn giữa dọc chính xác */
   border: none;
   background: white;
   width: 44px;
@@ -280,7 +280,7 @@ body {
 
 /* ===================== FOOTER ===================== */
 .footer {
-  position: fixed; /* ⚠️ dính cố định ở dưới màn hình, giống header */
+  position: fixed; /* dính cố định ở dưới màn hình, giống header */
   bottom: 0;
   left: 0;
   width: 100%;
@@ -370,7 +370,7 @@ html {
 
 /* ===================== HAMBURGER (nút ☰ trên mobile) ===================== */
 .hamburger {
-  display: none; /* ⚠️ ẩn trên desktop, chỉ hiện trên mobile qua @media */
+  display: none; /* ẩn trên desktop, chỉ hiện trên mobile qua @media */
   background: none;
   border: none;
   font-size: 26px;
@@ -392,7 +392,7 @@ html {
   position: fixed;
   inset: 0; /* viết tắt của top:0; right:0; bottom:0; left:0 - phủ toàn màn hình */
   background: rgba(0, 0, 0, 0.4); /* đen mờ 40% */
-  z-index: 999; /* ⚠️ phải nhỏ hơn sidebar (1000) để sidebar nằm trên overlay */
+  z-index: 999; /* phải nhỏ hơn sidebar (1000) để sidebar nằm trên overlay */
   backdrop-filter: blur(2px);
 }
 .sidebar-overlay.active {
@@ -427,12 +427,12 @@ html {
 }
 .youtube-item {
   position: relative;
-  padding-bottom: 56.25%; /* ⚠️ trick responsive video: 56.25% = tỉ lệ 16:9 (9/16 = 0.5625) */
+  padding-bottom: 56.25%; /* trick responsive video: 56.25% = tỉ lệ 16:9 (9/16 = 0.5625) */
   height: 0; /* kết hợp với padding-bottom để tạo khung có tỉ lệ cố định */
   overflow: hidden;
 }
 .youtube-item iframe {
-  position: absolute; /* ⚠️ phủ toàn bộ khung .youtube-item */
+  position: absolute; /* phủ toàn bộ khung .youtube-item */
   top: 0;
   left: 0;
   width: 100%;
@@ -458,7 +458,7 @@ html {
   .sideBar {
     position: fixed;
     top: 0;
-    right: -260px; /* ⚠️ ẩn sang phải ngoài màn hình (rộng 240px + dư 20px) */
+    right: -260px; /* ẩn sang phải ngoài màn hình (rộng 240px + dư 20px) */
     width: 240px;
     height: 100vh;
     max-height: 100vh;
@@ -466,12 +466,12 @@ html {
     z-index: 1000;
     overflow-y: auto;
     transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    /* ↑ animation trượt mượt - cubic-bezier(0.4,0,0.2,1) là easing chuẩn của Material Design */
+    /* ↑ animation trượt mượt - cubic-bezier(0.4,0,0.2,1)  */
     box-shadow: -4px 0 24px rgba(0, 0, 0, 0.18); /* bóng đổ bên trái sidebar */
     padding-top: 60px; /* chừa chỗ cho nút X ở trên */
   }
   .sideBar.open {
-    right: 0; /* ⚠️ JS thêm class "open" → sidebar trượt vào - đây là cách sidebar hoạt động */
+    right: 0; /* JS thêm class "open" → sidebar trượt vào - đây là cách sidebar hoạt động */
   }
 
   .menu .title {
