@@ -4,7 +4,7 @@ const sideBar = document.querySelector(".sideBar");
 const overlay = document.getElementById("sidebarOverlay");
 
 function openSidebar() {
-  sideBar.classList.add("open");
+  sideBar.classList.add("open"); // siderBar là lấy trong phần tử HTML, classList là danh sách các phần tử trong HTML, add là thêm class open vào phần tử
   overlay.classList.add("active");
   hamburgerBtn.textContent = "✕"; //Dang loi khong hien thi duoc
   document.body.style.overflow = "hidden";
@@ -18,6 +18,7 @@ function closeSidebar() {
 }
 
 hamburgerBtn.addEventListener("click", function () {
+  //Khi click nút, nếu sideBar mở -> đóng, nếu đóng thì mở
   if (sideBar.classList.contains("open")) {
     closeSidebar();
   } else {
